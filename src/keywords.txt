@@ -1,0 +1,16 @@
+Flight  KEYWORD1
+brighten    KEYWORD2
+dim     KEYWORD2
+on      KEYWORD2
+play     KEYWORD2
+quick     KEYWORD2
+slow KEYWORD2
+togglePower KEYWORD2
+randomColors     KEYWORD2
+jump3 KEYWORD2
+jump7 KEYWORD2
+fade3 KEYWORD2
+fade7 KEYWORD2
+flash KEYWORD2
+auto1 KEYWORD2
+color KEYWORD2
