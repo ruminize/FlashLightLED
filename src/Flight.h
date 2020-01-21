@@ -12,25 +12,25 @@
 class Flight
 {
   public:
-    Flight(int pin);
-    void dim();
-    void brighten();
-    void on();
-    void play();
-    void togglePower();
-    void quick(int count = 7);
-    void slow(int count = 7);
-    void jump3();
-    void jump7();
-    void fade3();
-    void fade7();
-    void flash();
-    void color(int col, int row, int lumen = 0);
-    void auto1();
-    void setLumens(int level);
-    void randomColors(const char* colorColumn="z");
+    Flight();
+    void DIM();
+    void BRIGHTEN();
+    void ON();
+    void PLAY();
+    void POWER();
+    void QUICK(byte speed = 7);
+    void SLOW(byte speed = 7);
+    void JUMP3();
+    void JUMP7();
+    void FADE3();
+    void FADE7();
+    void FLASH();
+    void AUTO();
+    void color(byte col, byte row, byte lumen = 0);
+    void setLumens(byte level = 0);
+    void setSpeed(byte speed = 0);
+    void randomColor(byte column);
   private:
-    int _pin;
 };
 
 #endif
