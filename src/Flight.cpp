@@ -85,7 +85,7 @@ void Flight::SLOW(byte speed){
   }
 }
 
-void Flight::color(byte col, byte row, byte lumen){
+void Flight::COLOR(byte col, byte row, byte lumen){
   irsend.sendNEC(colors[col][row], 32);
   if(lumen > 0){
     setLumens(lumen);
