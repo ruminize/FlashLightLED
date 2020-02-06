@@ -11,7 +11,7 @@ An Arduino library that can programmatically manipulate the LED color changing l
 \
 \
 \
-\
+
 
 
 
