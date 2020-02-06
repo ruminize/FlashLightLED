@@ -6,7 +6,12 @@
 An Arduino library that can programmatically manipulate the LED color changing light strips controlled by a 44 Key IR Remote.
 
 
-
+\
+\
+\
+\
+\
+\
 
 
 
