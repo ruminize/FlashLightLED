@@ -2,9 +2,13 @@
 
 <img align="left" width="200" height="200" src="./ledlightstrip.jpg" style="padding-right: 20px;">
 
-<p style="padding-bottom: 180px;" class"foo">
+
 An Arduino library that can programmatically manipulate the LED color changing light strips controlled by a 44 Key IR Remote.
-</p>
+
+
+
+
+
 
 ## Getting Started
 In the Arduino IDE, click **Sketch** >> **Include Library** >> **Manage Libraries...**
