@@ -5,7 +5,12 @@
 <p style="padding-bottom: 180px;">
 An Arduino library that can programmatically manipulate the LED color changing light strips controlled by a 44 Key IR Remote.
 </p>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 ## Getting Started
 In the Arduino IDE, click **Sketch** >> **Include Library** >> **Manage Libraries...**
 
