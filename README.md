@@ -2,18 +2,9 @@
 
 <img align="left" width="200" height="200" src="./ledlightstrip.jpg" style="padding-right: 20px;">
 
-
+<p style="padding-bottom: 180px;">
 An Arduino library that can programmatically manipulate the LED color changing light strips controlled by a 44 Key IR Remote.
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
+</p>
 
 ## Getting Started
 In the Arduino IDE, click **Sketch** >> **Include Library** >> **Manage Libraries...**
@@ -42,45 +33,12 @@ Notes:
 
 ---
 
-## <span style="color: #c60f13;"> WARNING!!! </span>
-<p>
-Potential fire hazard!
-</p>
-
-<p>
-When the lights are coiled and powered on, enough heat is produced to melt the lights and reel. When under power
-uncoil lights to prevent high heat condition.
-</p>
-
----
-
-## Sketch 1
-Example sketch sends an IR signal equivalent of the *AUTO* button on the remote and then sends 
-an IR signal equivalent to the <*increase brightness symbol*> button on the remote.
-The LED light strips should enter into *AUTO* mode and set *FULL* brightness.
-
-```
-#include <FlashlightLED.h> // Import library;
-
-FlashlightLED lights; // Now referenced as lights throughout sketch.
-
-void setup(){
-  // Serial Monitor @ 9600 baud
-  Serial.begin(9600);
-  lights.AUTO().BRIGHTEN();
-}
-
-void loop(){}
-```
-
----
-
 ## IR Remote Button-To-Method Mapping Diagram
 
 Notes:
 - All methods in the library are capitalized e.g. QUICK, DIY3, SLOW, COLOR, RANDOM_COLOR etc...
 - Any button with a printed word has a matched method i.e. the button with the word *FLASH* maps to the method FlashlightLED.FLASH().
-- Any button with numbers displays the two arguments required to activate the corresponding button via the method displayed in the attached word bubble.
+- Any button with numbers displays the two arguments required to activate the corresponding button via the method displayed in the attached word bubble: method(column, row).
 
 <p align="center">
   <img src="./lightStripRemote.jpg">
@@ -201,31 +159,23 @@ The following method is used to select one of the twenty selectable colors.
 Notes:
 - The IR Remote has twenty default colors to choose from.
 - The *COLOR* method sends one pulse.
+- There are four columns and five rows.
 
 ```
 /*
 Takes two required integer parameters: column #, row #.
-Excepts a third optional luminosity integer.
-If the luminosity integer is present, the *LUMENS* will run first, then the color signal will be sent.
-The third optional parameter default is -1.
 */
 
-COLOR(int, int, int)
+COLOR(int:required, int:required)
 ```
+
 ##### Additional method
 
-The following method was added for convenience.
-
-Notes:
-- The library cannot keep track of the current flash interval setting as there is no confirmation signal from the LED lights.
-- The *SPEED* method attempts to set the longest flash interval, then applies the default or supplied argument.
-- If a level of thirty out of sixty settings is desired, the method will first apply 65 dimming pulses, then use the supplied 30 integer to count up from a slow setting of 1.
 ```
-
 /*
 Takes one optional integer parameter: column #.
 If an integer:column is supplied, the random selection will be confined to that column.
-If no integer is provided, a random color will be selected from any column and row.
+If no integer is provided, a random color will be selected from any column and row with each method call.
 */
 
 RANDOM_COLOR(int:optional)
@@ -237,17 +187,98 @@ The following method is used to select a color arrow.
 
 Notes:
 - The IR Remote has six color arrows to choose from.
-- The *ARROW* method sends one or more pulses.
-
+- The *ARROW* method sends one unless the third optional argument is supplied.
 ```
+
 /*
 Takes two required integer parameters: column #, row #.
-Excepts a third optional number of pulses integer.
-The third optional parameter default is 1 pulse.
 */
 
-ARROW(int:required, int:required, int:optional)
+ARROW(int:required, int:required)
 ```
-<style>
-#foo {color: red}
-</style>
+---
+
+#### Do It Yourself (DIY)
+
+The following methods map to the DIY# buttons.
+
+Notes:
+- The IR Remote has six memory selections.
+
+```
+DIY1()
+
+DIY2()
+
+DIY3()
+
+DIY4()
+
+DIY5()
+
+DIY6()
+```
+
+#### Remaining Methods
+
+```
+PLAY()
+
+POWER()
+
+JUMP3()
+
+JUMP7()
+
+FADE3()
+
+FADE7()
+
+FLASH()
+
+AUTO()
+```
+
+#### Method Chaining
+
+Notes:
+- All methods can be chained.
+- A *DELAY* method is available to separate method chaining with delays.
+
+```
+DELAY(int:required)
+```
+
+---
+
+## WARNING!!!
+<p>
+Potential fire hazard!
+</p>
+
+<p>
+When the lights are coiled and powered on, enough heat is produced to melt the lights and reel. When under power
+uncoil lights to prevent high heat condition.
+</p>
+
+---
+
+## Sketch 1
+Example sketch sends an IR signal equivalent of the *AUTO* button on the remote and then sends 
+an IR signal equivalent to the <*increase brightness symbol*> button on the remote.
+The LED light strips should enter into *AUTO* mode and set *FULL* brightness.
+
+```
+#include <FlashlightLED.h> // Import library;
+
+FlashlightLED lights; // Now referenced as lights throughout sketch.
+
+void setup(){
+  // Serial Monitor @ 9600 baud
+  Serial.begin(9600);
+  lights.AUTO().BRIGHTEN();
+  lights.COLOR(0,3).DELAY(5000).COLOR(0,0).DELAY(10000).FLASH();
+}
+
+void loop(){}
+```
