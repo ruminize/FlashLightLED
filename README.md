@@ -28,6 +28,7 @@ Include the *FlashlightLED* library in your Arduino sketch.
 ## Build an Arduino IR Transmitter
 
 Notes:
+  - Requires one infrared (IR) LED.
   - The IR LED short leg is ground.
   - Pin #3 **MUST** be used as the transmit pin. This library uses the Arduino IRremote library by Sherriff, which uses pin #3.
   - The resistor value in the image is 100ohm, but higher resistor values may be used to shorten the distance of the transmission when interference is an issue.
@@ -266,3 +267,8 @@ void setup(){
 
 void loop(){}
 ```
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

@@ -33,7 +33,6 @@ long int arrows [3][2] = {
 FlashlightLED::FlashlightLED(){}
 
 FlashlightLED& FlashlightLED::BRIGHTEN(int pulses){
-
   SEND(0xFF3AC5, pulses);
 }
 
@@ -61,27 +60,27 @@ FlashlightLED& FlashlightLED::ARROW(int col, int row){
   }
 }
 
-FlashlightLED& DIY1(){
+FlashlightLED& FlashlightLED::DIY1(){
   irsend.sendNEC(0xFF30CF, 32);
 };
 
-FlashlightLED& DIY2(){
+FlashlightLED& FlashlightLED::DIY2(){
   irsend.sendNEC(0xFFB04F, 32);
 };
 
-FlashlightLED& DIY3(){
+FlashlightLED& FlashlightLED::DIY3(){
   irsend.sendNEC(0xFF30CF, 32);
 };
 
-FlashlightLED& DIY4(){
+FlashlightLED& FlashlightLED::DIY4(){
   irsend.sendNEC(0xFF30CF, 32);
 };
 
-FlashlightLED& DIY5(){
+FlashlightLED& FlashlightLED::DIY5(){
   irsend.sendNEC(0xFF30CF, 32);
 };
 
-FlashlightLED& DIY6(){
+FlashlightLED& FlashlightLED::DIY6(){
   irsend.sendNEC(0xFF30CF, 32);
 };
 
