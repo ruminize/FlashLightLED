@@ -51,29 +51,6 @@ Notes:
   <img src="./lightStripRemote.jpg">
 </p>
 
-### Button-To-Method Examples
-
-Note: Assume the library has already been imported as *lights*.
-
-```
-// Choose red.
-lights.COLOR(0,0);
-
-// Choose white.
-lights.COLOR(3,0);
-
-// Choose fuchsia.
-lights.COLOR(2,4);
-
-// Choose green down arrow.
-lights.ARROW(1,1);
-
-// Choose play.
-lights.PLAY();
-
-// Choose FADE3.
-lights.FADE3();
-```
 ---
 
 ## Documentation
@@ -93,9 +70,9 @@ If no integer is provided ten pulses will be emitted.
 When an integer is provided, the integer will be the number of pulses.
 */
 
-BRIGHTEN(int)
+BRIGHTEN(int:optional)
 
-DIM(int)
+DIM(int:optional)
 ```
 
 ##### Additional method
