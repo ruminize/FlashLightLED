@@ -8,7 +8,6 @@
 #include <IRremote.h>
 #include "FlashlightLED.h"
 
-
 IRsend irsend;
 
 const int COLOR_COLS = 4;
@@ -69,19 +68,19 @@ FlashlightLED& FlashlightLED::DIY2(){
 };
 
 FlashlightLED& FlashlightLED::DIY3(){
-  irsend.sendNEC(0xFF30CF, 32);
+  irsend.sendNEC(0xFF708F, 32);
 };
 
 FlashlightLED& FlashlightLED::DIY4(){
-  irsend.sendNEC(0xFF30CF, 32);
+  irsend.sendNEC(0xFF10EF, 32);
 };
 
 FlashlightLED& FlashlightLED::DIY5(){
-  irsend.sendNEC(0xFF30CF, 32);
+  irsend.sendNEC(0xFF906F, 32);
 };
 
 FlashlightLED& FlashlightLED::DIY6(){
-  irsend.sendNEC(0xFF30CF, 32);
+  irsend.sendNEC(0xFF50AF, 32);
 };
 
 FlashlightLED& FlashlightLED::QUICK(int speed){

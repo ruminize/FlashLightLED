@@ -92,7 +92,7 @@ If no integer is provided four pulses will be emitted to achieve a middle lumino
 When an integer is provided, the integer will be the number of pulses starting at full dim.
 */
 
-LUMENS(int)
+LUMENS(int:optional)
 ```
 
 ---
@@ -112,9 +112,9 @@ If no integer is provided 65 pulses will be emitted.
 When an integer is provided, the integer will be the number of pulses.
 */
 
-QUICK(int)
+QUICK(int:optional)
 
-SLOW(int)
+SLOW(int;optional)
 ```
 
 ##### Additional method
@@ -133,7 +133,7 @@ If no integer is provided thirty pulses will be emitted to achieve a middle flas
 When an integer is provided, the integer will be the number of pulses starting at the longest interval setting.
 */
 
-SPEED(int)
+SPEED(int:optional)
 ```
 ---
 
